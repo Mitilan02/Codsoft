@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Max Watch ⌚</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+      .pricing-image {
+  padding: 10px; /* Add padding between images */
+  border: 2px solid transparent; /* Invisible outline */
+  box-sizing: border-box; /* Ensure padding is included in the width and height */
+  max-width: 100%; /* Make sure the image is responsive */
+}
+
+
+.carousel-control {
+  width: 5%;
+}
+
+@media (min-width: 768px) {
+  .col-sm-4 {
+      display: inline-block;
+      float: none; /* Remove the default float */
+      vertical-align: top;
+  }
+
+  .item {
+      display: flex;
+      justify-content: center;
+  }
+}
+body {
+  background-color: black;
+    font-family: Arial, sans-serif;
+}
+
+a,h3,p,h5,h1{
+  color: #ffffff;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#features{
+  color: #ffffff;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#pricing {
+    background: url('assets/gg.png') repeat center center;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    transform: translateX(100%);
+    opacity: 0;
+
+   
+    animation: slideIn 5.5s ease-out forwards;
+}
+
+.navbar-custom {
+    background-color: none;
+    border-color: transparent;
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-nav > li > a {
+    color: #fff;
+}
+
+.hero-section {
+    height: 100vh;
+    background: url('assets/header-bg.png') no-repeat center center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    /* Initial state for animation */
+    transform: translateX(100%);
+    opacity: 0;
+
+    /* Animation */
+    animation: slideIn 1.5s ease-out forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%); /* Start off-screen to the right */
+        opacity: 0; /* Start with 0 opacity */
+    }
+    to {
+        transform: translateX(0); /* End at the original position */
+        opacity: 1; /* End with full opacity */
+    }
+}
+
+
+.hero-section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-section .content {
+    position: relative;
+    z-index: 2;
+}
+
+.feature-section {
+  height: 100vh;
+    background: url('assets/store-bg.png') no-repeat center center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    position: relative;
+    padding: 50px 0;
+    text-align: center;
+
+   
+    transform: translateX(100%);
+    opacity: 0;
+
+   
+    animation: slideIn 3.5s ease-out forwards;
+}
+
+.feature-box {
+    margin: 20px 0;
+}
+
+.footer-custom {
+    background-color: none;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+#testimonials {
+    background-color: #000; /* Background color similar to the image */
+    color: #fff; /* Text color */
+    padding: 50px 0;
+}
+
+.testimonial-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Circular image */
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-top: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+sp {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0 20px;
+    text-align: left;
+}
+
+.carousel-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.footer-section {
+            padding: 40px 0;
+            background-color:none
+        }
+        .footer-section h5 {
+            font-weight: bold;
+        }
+        .footer-section a {
+            color: #393434; /* Gray color for links */
+            text-decoration: none;
+        }
+        .footer-section a:hover {
+            color: #ffffff; /* White color on hover */
+        }
+        .newsletter input[type="email"] {
+            border-radius: 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        .newsletter .btn {
+            border-radius: 0;
+            background-color: #c89c84;
+            color: #fff;
+        }
+        .newsletter .btn:hover {
+            background-color: #b07e67;
+        }
+        #testimonials {
+    /* height: 100vh; */
+    background: url('assets/black.png') no-repeat center center;
+    background-size: inherit;
+    color: white;
+    text-align: center;
+    position: relative;
+
+    transform: translateX(100%);
+    opacity: 0;
+
+   
+    animation: slideIn 8.5s ease-in forwards;
+}
+.colored-icon {
+            color: #ffffff !important; /* Example color */
+        }
+    </style>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    var featureSection = document.querySelector('.feature-section');
+
+    featureSection.addEventListener('mouseenter', function() {
+        if (!featureSection.classList.contains('hover-animate')) {
+            featureSection.classList.add('hover-animate');
+        }
+    });
+});
+
+
+
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-custom">
+        <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav1">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+                <a class="navbar-brand" href="#">Max Watch</a>
+            </div>
+            <div class="collapse navbar-collapse" id="nav1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#testimonials">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="overlay"></div>
+        <div class="content" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+            <h1>Welcome to Max Watch</h1>
+            <p>Your perfect companion for timekeeping</p>
+            <a href="#" class="btn btn-default">Learn More</a>
+        </div>
+    </section>
+    <center>
+      <h2 id="features">Features</h2>
+    </center>
+    <section class="feature-section container">
+      <div class="row">
+            <div class="col-md-4 feature-box">
+                <i class="glyphicon glyphicon-heart colored-icon" style="font-size: 50px; color: #333;"></i>
+                <h3>Feature One</h3>
+                <p>Long battery life for extended use.</p>
+            </div>
+            <div class="col-md-4 feature-box">
+              <i class="glyphicon glyphicon-time" style="font-size: 50px; color: #333;"></i>
+              <h3>Feature Two</h3>
+              <p>High precision timekeeping.</p>
+          </div>
+            <div class="col-md-4 feature-box">
+                <i class="glyphicon glyphicon-tint colored-icon" style="font-size: 50px; color: #333;"></i>
+                <h3>Feature Three</h3>
+                <p>Water resistant up to 50 meters.</p>
+            </div>
+        </div>
+    </section>
+    <section id="pricing">
+      <center><h2>Collections</h2></center>
+      <div id="pricingCarousel" class="carousel slide" data-ride="carousel">
+          <!-- Carousel Items -->
+          <div class="carousel-inner" role="listbox">
+              <div class="item active">
+                  <div class="col-sm-6">
+                      <center>
+                          <img src="assets/watch-1.png" class="pricing-image">
+                          <h3>Watch 1</h3>
+                          <p>$199.99</p>
+                      </center>
+                  </div>
+                  <div class="col-sm-6">
+                      <center>
+                          <img src="assets/watch-2.png" class="pricing-image">
+                          <h3>Watch 2</h3>
+                          <p>$249.99</p>
+                      </center>
+                  </div>
+                  <div class="col-sm-4">
+                      <center>
+                          <img src="assets/watch-3.png" class="pricing-image">
+                          <h3>Watch 3</h3>
+                          <p>$299.99</p>
+                      </center>
+                  </div>
+              </div>
+              <!-- Additional items can go here -->
+          </div>
+      </div>
+  </section>
+  
+  <section id="testimonials" class="carousel slide" data-ride="carousel">
+    <center><h1>WHAT CUSTOMERS ARE SAYING</h1></center><br>
+    <div class="carousel-inner" role="listbox">
+  <br><br><br>
+  <br><br><br>
+  <div class="item active">
+            <div class="col-sm-6">
+                <center>
+                    <img src="assets/smith.png" class="testimonial-image img-circle">
+                    <h2>AMANDA SMITH</h2>
+                    <sp>
+                        Nisi cumque in necessitatibus molestiae eaque excepturi ab. 
+                        Laboriosam ipsam voluptatem voluptatibus labore quam nihil. 
+                        Quasi occaecati quos ratione quia aut molestiae velit et.
+                    </sp>
+                </center>
+            </div>
+            <div class="col-sm-6">
+                <center>
+                    <img src="assets/sandra-willims.png" class="testimonial-image img-circle">
+                    <h2>AINARA VERGARA</h2>
+                    <sp>
+                        Nisi cumque in necessitatibus molestiae eaque excepturi ab. 
+                        Laboriosam ipsam voluptatem voluptatibus labore quam nihil. 
+                        Quasi occaecati quos ratione quia aut molestiae velit et.
+                    </sp>
+                </center>
+            </div>
+        </div>
+      </div>
+  <br><br><br>
+  <br><br><br>
+  <div class="container footer-section">
+    <div class="row">
+        <!-- Watch Section -->
+        <div class="col-md-3">
+            <h1>MAX WATCH</h1>
+        </div>
+
+        <!-- Menu Section -->
+        <div class="col-md-3">
+            <h5>MENU</h5>
+            <ul class="list-unstyled">
+                <li><a href="#">Shipping Info</a></li>
+                <li><a href="#">Refunds</a></li>
+                <li><a href="#">How to Order</a></li>
+                <li><a href="#">How to Track</a></li>
+                <li><a href="#">Size Guides</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact Us Section -->
+        <div class="col-md-3">
+            <ul class="list-unstyled" id="Contact">
+                <li><a href="#">Contact Us</a></li>
+                <li><a class="glyphicon glyphicon-phone"> 8220617220</a></li>
+                <li><a href="#">My Account</a></li>
+                <li><a class="glyphicon glyphicon-send"> maxwatch@gmail.com</a></li>
+            </ul>
+        </div>
+
+        <!-- Newsletter Signup Section -->
+        <div class="col-md-3">
+            <h5>SIGNUP FOR OUR LATEST NEWS</h5>
+            <form class="newsletter">
+                <div class="input-group">
+                    <input type="email" class="form-control" placeholder="email address">
+                    <button class="btn" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</section>
+
+ </section>
+ <center>
+  <a href="#"><span class="glyphicon glyphicon-menu-up"></span></a>
+ </center>
+
+    <footer class="footer-custom">
+        <p>&copy; 2024 Max Watch. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
